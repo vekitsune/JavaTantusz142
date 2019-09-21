@@ -12,27 +12,26 @@ import java.util.Random;
  * @author Verosffy
  */
 public class VeletlenSzam {
+
     int tol;
     int ig;
-  
 
     public VeletlenSzam(int tol, int ig) {
-         if(tol>ig){
-        int fiok=tol;
-        tol=ig;
-        ig=fiok;
+        if (tol > ig) {
+            int fiok = tol;
+            tol = ig;
+            ig = fiok;
         }
-        
+
         this.tol = tol;
         this.ig = ig;
-       
+
     }
-    public int veletlenszam(){
-       Random rd=new Random();
-       
-        return rd.nextInt((ig-tol)+1)+tol;
+
+    public int veletlenszam() {
+        Random rd = new Random();
+
+        return rd.nextInt((ig - tol) + 1) + tol;
     }
-    
-    
-    
+
 }

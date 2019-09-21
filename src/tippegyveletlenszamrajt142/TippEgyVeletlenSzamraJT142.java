@@ -25,19 +25,22 @@ public class TippEgyVeletlenSzamraJT142 {
           ig=Integer.parseInt(JOptionPane.showInputDialog("Meddig?"));
           VeletlenSzam jatek=new VeletlenSzam(tol, ig);
           
-          int kor=JOptionPane.showConfirmDialog(null, "Szóval, jöhet egy kör?","MOndj igent!",JOptionPane.YES_NO_OPTION);
+          int kor=JOptionPane.showConfirmDialog(null, "Szóval, jöhet egy kör?","Mondj igent!",JOptionPane.YES_NO_OPTION);
+          int vszam=jatek.veletlenszam();
           while(kor==0){
               int tipp=Integer.parseInt(JOptionPane.showInputDialog("Tippelj "+jatek.tol+" és"+jatek.ig+" közötti számra"));
-              int vszam=jatek.veletlenszam();
+              
               if(tipp==vszam){
                   JOptionPane.showMessageDialog(null, "Gratulálok, nyertél!");
+                  kor++;
               }else{
                   if(tipp<vszam)
                   JOptionPane.showMessageDialog(null, "A tipped kisebb, mint az a szám, amire én gondoltam");
                   else
                    JOptionPane.showMessageDialog(null, "A tipped nagyobb, mint az a szám, amire én gondoltam");   
               }
-              kor=JOptionPane.showConfirmDialog(null, "Még egy kör??","Válassz!",JOptionPane.YES_NO_OPTION);
+              
+             
           }
           System.exit(0);
          
